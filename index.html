@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>숫자야구게임</title>
+    <script defer src="main.js"></script>
+    <style>
+      * {
+        line-height: 1.5;
+      }
+    </style>
+  </head>
+  <body>
+    <h3>숫자야구게임</h3>
+    <ul>
+      <li>10번의 기회 안에서 중복되지 않은 4자리 숫자를 찾아보세요.</li>
+      <li>맞힌 숫자의 개수 => 볼</li>
+      <li>순서까지 맞힌 숫자의 개수 => 스트라이크</li>
+      <li>하나도 못 맞추면 => OUT</li>
+      <li>3 OUT => Lose</li>
+    </ul>
+    <div>
+      남은 기회: <strong><span id="chanceLeft"></span></strong> 회
+    </div>
+    <form id="form">
+      <input id="input" type="text" maxlength="4" />
+      <button id="button">확인</button>
+    </form>
+    <strong><div id="result"></div></strong>
+  </body>
+</html>
