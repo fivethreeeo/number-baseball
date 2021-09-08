@@ -3,6 +3,7 @@ const $form = document.querySelector('#form');
 const $input = document.querySelector('#input');
 const $result = document.querySelector('#result');
 const $chanceLeft = document.querySelector('#chanceLeft');
+const $countOut = document.querySelector('#countOut');
 
 // 1~9 숫자 모음
 const numbers = [];
@@ -17,12 +18,17 @@ for (let n = 0; n < 4; n++) {
   answer.push(numbers[index]);
   numbers.splice(index, 1);
 }
-
+console.log(answer);
 // 시도한 값들
 const tries = [];
 
-// out
+// out 세팅, 표시
 let countOut = 0;
+$countOut.textContent = countOut;
+function setCountOut() {
+  countOut++;
+  $countOut.textContent = countOut;
+}
 
 // 입력창 초기화
 function inputClear() {
@@ -127,6 +133,7 @@ $form.addEventListener('submit', (event) => {
 
   // 0스트라이크 0볼 일 때
   if (countOut === 2) {
+    setCountOut();
     $result.append(
       `${value}: 3 OUT!!... You Lose ㅠㅠ... Answer is '${answer.join('')}'`,
       document.createElement('br')
@@ -136,7 +143,8 @@ $form.addEventListener('submit', (event) => {
     $input.disabled = true;
     return;
   }
-  countOut++;
+
+  setCountOut();
   $result.append(`${value}: ${countOut} OUT !!`, document.createElement('br'));
   tries.push(value);
   setChanceLeft();
