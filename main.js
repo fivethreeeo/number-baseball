@@ -86,6 +86,7 @@ $form.addEventListener('submit', (event) => {
     );
     tries.push(value);
     setChanceLeft();
+    inputClear();
     $input.disabled = true;
     return;
   }
@@ -98,12 +99,11 @@ $form.addEventListener('submit', (event) => {
     );
     tries.push(value);
     setChanceLeft();
+    inputClear();
     $input.disabled = true;
 
     return;
   }
-
-  // 3 out 게임오버 검사
 
   // 스트라이크,볼 검사
   let strike = 0;
@@ -133,6 +133,7 @@ $form.addEventListener('submit', (event) => {
 
   // 0스트라이크 0볼 일 때
   if (countOut === 2) {
+    // 3아웃 일때
     setCountOut();
     $result.append(
       `${value}: 3 OUT!!... You Lose ㅠㅠ... Answer is '${answer.join('')}'`,
@@ -144,6 +145,7 @@ $form.addEventListener('submit', (event) => {
     return;
   }
 
+  //일반 아웃 일때
   setCountOut();
   $result.append(`${value}: ${countOut} OUT !!`, document.createElement('br'));
   tries.push(value);
