@@ -13,7 +13,7 @@
 
 ### 프로그래밍 순서도
 
-<img src="programming-flowchart.jpg" height="800px">
+<img src="programming-flowchart-number-baseball.jpg">
 
 <br>
 
