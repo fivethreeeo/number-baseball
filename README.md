@@ -1,7 +1,7 @@
 # Web Game: Number Baseball
 
+- 숫자야구게임
 - https://mansaout.github.io/number-baseball/
-- ## 숫자야구게임
 
 <br>
 
